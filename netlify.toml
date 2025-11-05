@@ -1,3 +1,12 @@
 [build]
   command = "npm run build-storybook"
   publish = "storybook-static"
+
+# ✅ Disable Netlify’s automatic Next.js plugin
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+  enabled = false
+
+[build.environment]
+  # ✅ Completely skip Next.js runtime auto-detection
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
